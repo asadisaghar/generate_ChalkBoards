@@ -1,9 +1,0 @@
-import numpy as np
-
-class board(object):
-    def __init__(self, width, height, bgcolor):
-        self.width = width
-        self.hegith = height
-        self.bgcolor = bgcolor
-        self.board = np.zeros((height, width))
-        
