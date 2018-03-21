@@ -52,9 +52,6 @@ def generate_board(no, args):
     drawing_indices = [np.random.randint(0, len(data[x]['dataset']), 1)[0] for x in drawing_types]
     
     #initialize a board
-    # width = 4640
-    # height = 3480
-    # bgcolor = 255 #white
     brd = board(args.width, args.height, args.background)
     
     for (t,i) in zip(drawing_types, drawing_indices):
@@ -78,7 +75,6 @@ def generate_board(no, args):
     plt.imshow(brd.array, cmap='gray')
     brd.save(os.path.join(args.boards_path, 'board{}_{}.jpg'.format(args.seed, no)))
     brd.label(os.path.join(args.labels_path, 'board{}_{}.csv'.format(args.seed, no)))
-    brd.show()
 
 def main():
     parser = argparse.ArgumentParser()
@@ -94,7 +90,7 @@ def main():
     parser.add_argument('--no_boards', type=int, default=10, help='number of random boards to generate')
     parser.add_argument('--height', type=int, default=3480, help='height of generated boards')
     parser.add_argument('--width', type=int, default=4640, help='width of generated boards')
-    parser.add_argument('--background', type=int, default=255, help='base background color of generated boards')
+    parser.add_argument('--background', type=int, default=255, help='base background color of generated boards')#white
     parser.add_argument('--background_change_prob', type=float, default=0.8, help='probability of changing background color')
     parser.add_argument('--horizontal_gradient_prob', type=float, default=0.8, help='probability of applying horizontal gradient')
     parser.add_argument('--horizontal_vertical_prob', type=float, default=0.8, help='probability of applying vertical gradient')        
