@@ -113,9 +113,6 @@ class board(object):
     def add_email(self, email, x_offset, y_offset):
         pass
 
-    def add_noise(self):
-        pass
-
     #This is slow!
     def add_perspective(self, probability, m=-0.9):
         prob = np.random.random()
