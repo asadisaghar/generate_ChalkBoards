@@ -1,7 +1,7 @@
 """
 usage:
 
-python main.py --seed 42 --no_boards 10 --no_drawings 100        
+python main.py --seed 42 --no_boards 10 --no_drawings 100 --width 600 --height 300 --scale_min 0.5 --scale_max 1       
 
 """
 import numpy as np
@@ -60,7 +60,7 @@ def generate_board(no, args):
         array = data[t]['dataset'][i]
         dr = drawing(label, i, array)
         dr.rotate(args.rotation_prob)
-        dr.scale(1.0, 10, 3)
+        dr.scale(args.scale_prob, args.scale_min, args.scale_max)
         brd.add_drawing(dr, np.random.randint(0, high=args.width), np.random.randint(0, high=args.height))
 
     #change the background color of the board
@@ -97,6 +97,9 @@ def main():
     # drawing params
     parser.add_argument('--no_drawings', type=int, default=100, help='maximum number of drawings on each board')
     parser.add_argument('--rotation_prob', type=float, default=0.8, help='rotation probability')
+    parser.add_argument('--scale_prob', type=float, default=1.0, help='scaling probability')
+    parser.add_argument('--scale_min', type=float, default=3, help='min scale factor')
+    parser.add_argument('--scale_max', type=float, default=10, help='max scale factor')
     
     parser.set_defaults()
     args = parser.parse_args()
