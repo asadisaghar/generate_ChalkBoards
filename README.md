@@ -11,7 +11,7 @@ Generating training data for [ChalkMail](https://github.com/innovationgarage/Cha
 - generate boards (checkout all the arguments in main.py)
 
         # from generate_ChalkBoards/src/
-        python main.py --seed 42 --no_boards 10 --no_drawings 100
+        python main.py --seed 42 --no_boards 10 --no_drawings 100 --width 600 --height 300 --scale_min 0.5 --scale_max 1
         
 
 - generated boards will be saved in __generate_ChalkBoards/boards/__
