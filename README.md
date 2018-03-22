@@ -6,7 +6,7 @@ Generating training data for [ChalkMail](https://github.com/innovationgarage/Cha
 - download [quickdraw](https://github.com/googlecreativelab/quickdraw-dataset) data:
 
         # from generate_ChalkBoards/src/
-        sh get_data.sh
+        ./get_data.sh
 
 - generate boards (checkout all the arguments in main.py)
 
